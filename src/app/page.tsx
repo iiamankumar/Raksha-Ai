@@ -3,6 +3,7 @@ import { LoginForm } from '@/components/login-form';
 import Logo from '@/components/logo';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { FileScan, Bot, ShieldCheck } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -71,7 +72,7 @@ export default function Home() {
                     <p className="font-bold mb-2">Recent Activity</p>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center"><div className="flex items-center gap-3"><div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></svg></div><div><p className="font-medium">Phishing Blocked</p><p className="text-xs text-slate-400">Malicious Link</p></div></div><p className="font-mono text-red-400">- Threat</p></div>
-                      <div className="flex justify-between items-center"><div className="flex items-center gap-3"><div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center"><svg xmlns="http://www.w_._org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div><div><p className="font-medium">Scan Complete</p><p className="text-xs text-slate-400">System Scan</p></div></div><p className="font-mono text-green-400">+ Safe</p></div>
+                      <div className="flex justify-between items-center"><div className="flex items-center gap-3"><div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0_0_24_24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div><div><p className="font-medium">Scan Complete</p><p className="text-xs text-slate-400">System Scan</p></div></div><p className="font-mono text-green-400">+ Safe</p></div>
                        <div className="flex justify-between items-center"><div className="flex items-center gap-3"><div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg></div><div><p className="font-medium">Password Breach</p><p className="text-xs text-slate-400">Data Leak</p></div></div><p className="font-mono text-red-400">- Alert</p></div>
                     </div>
                   </div>
@@ -84,6 +85,47 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-block bg-primary/10 text-primary font-semibold py-1 px-3 rounded-full text-sm mb-4">
+            Core Features
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Everything You Need, Nothing You Don't</h2>
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground mb-12">
+            Raksha AI is packed with powerful tools to help you manage your digital security with confidence and ease.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-muted/30 p-8 rounded-xl shadow-lg border border-border">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 mb-6 mx-auto">
+                <FileScan className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Threat Detection</h3>
+              <p className="text-muted-foreground">
+                Our AI analyzes files, logs, and network traffic to identify and neutralize threats in real-time.
+              </p>
+            </div>
+            <div className="bg-muted/30 p-8 rounded-xl shadow-lg border border-border">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 mb-6 mx-auto">
+                <ShieldCheck className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">AI Recommendations</h3>
+              <p className="text-muted-foreground">
+                Get personalized, actionable security advice based on your specific needs and digital habits.
+              </p>
+            </div>
+            <div className="bg-muted/30 p-8 rounded-xl shadow-lg border border-border">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 mb-6 mx-auto">
+                <Bot className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">AI Assistant</h3>
+              <p className="text-muted-foreground">
+                Your on-demand cybersecurity expert, ready to answer your questions and guide you through any security concern.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="login" className="py-16 lg:hidden">
          <div className="mx-auto grid w-[350px] gap-6">
