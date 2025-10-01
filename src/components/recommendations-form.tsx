@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { ShieldCheck } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,7 @@ function SubmitButton() {
 }
 
 export function RecommendationsForm() {
-  const [state, formAction] = useFormState(
+  const [state, formAction] = useActionState(
     getRecommendationsAction,
     initialState
   );
