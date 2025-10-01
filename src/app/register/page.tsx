@@ -5,30 +5,34 @@ import Link from 'next/link';
 
 export default function RegisterPage() {
   return (
-    <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2">
-       <div className="hidden bg-primary/10 lg:block relative">
+    <div className="w-full min-h-screen lg:grid lg:grid-cols-2 bg-background text-foreground">
+       <div className="hidden lg:flex flex-col items-center justify-center p-8 bg-muted/20 relative">
+        <div className="absolute top-6 left-6 flex items-center gap-2 text-2xl font-bold">
+           <Logo className="h-8 w-8 text-primary" />
+           <span>Raksha AI</span>
+        </div>
         <Image
-          src="https://picsum.photos/seed/raksha-signup/1200/1000"
-          alt="Abstract security pattern"
+          src="https://picsum.photos/seed/raksha-signup/800/800"
+          alt="Abstract security illustration"
           data-ai-hint="digital security"
-          fill
-          className="object-cover"
+          width={500}
+          height={500}
+          className="rounded-full shadow-2xl shadow-primary/20"
         />
-        <div className="absolute inset-0 bg-primary/20 backdrop-blur-sm" />
-         <div className="absolute bottom-8 left-8 right-8 p-6 bg-background/50 backdrop-blur-md rounded-lg border">
-            <h3 className="text-2xl font-bold text-primary-foreground">Join the Mission for a Safer Digital India</h3>
-            <p className="text-primary-foreground/80 mt-2">
+        <div className="mt-8 max-w-md text-center">
+            <h3 className="text-2xl font-bold">Join the Mission for a Safer Digital India</h3>
+            <p className="text-muted-foreground mt-2">
               By creating an account with Raksha AI, you are taking the first step towards securing your digital life. Our platform offers advanced tools and personalized insights to protect you from cyber threats.
             </p>
         </div>
       </div>
-      <div className="flex items-center justify-center py-12">
+      <div className="flex items-center justify-center py-12 px-4">
         <div className="mx-auto grid w-[380px] gap-6">
           <div className="grid gap-2 text-center">
-             <div className="flex justify-center items-center gap-2 mb-4">
+             <div className="flex justify-center items-center gap-2 mb-4 lg:hidden">
               <Logo className="h-10 w-10 text-primary" />
-              <h1 className="text-3xl font-bold font-headline">Create an Account</h1>
             </div>
+            <h1 className="text-3xl font-bold">Create an Account</h1>
             <p className="text-balance text-muted-foreground">
               Enter your details below to get started.
             </p>
@@ -36,7 +40,7 @@ export default function RegisterPage() {
           <RegisterForm />
           <div className="mt-4 text-center text-sm">
             Already have an account?{' '}
-            <Link href="/" className="underline">
+            <Link href="/" className="underline text-primary">
               Sign in
             </Link>
           </div>
