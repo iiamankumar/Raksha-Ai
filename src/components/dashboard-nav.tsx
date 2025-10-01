@@ -30,9 +30,8 @@ export function DashboardNav() {
     <div className="flex flex-col gap-2 px-2">
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} legacyBehavior passHref>
+          <Link href={item.href}>
             <SidebarMenuButton
-              asChild
               isActive={pathname === item.href}
               tooltip={item.label}
               className="justify-start"
