@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { LoginForm } from '@/components/login-form';
 import Logo from '@/components/logo';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -17,7 +18,13 @@ export default function Home() {
             </p>
           </div>
           <LoginForm />
-          <div className="mt-4 text-center text-sm">
+           <div className="mt-4 text-center text-sm">
+            Don't have an account?{' '}
+            <Link href="/register" className="underline">
+              Sign up
+            </Link>
+          </div>
+          <div className="text-center text-sm">
             Empowering a secure digital India.
           </div>
         </div>

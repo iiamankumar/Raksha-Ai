@@ -8,6 +8,7 @@ import {
   Bot,
   ShieldCheck,
   Home,
+  BookUser,
 } from "lucide-react";
 
 import {
@@ -21,6 +22,7 @@ const navItems = [
   { href: "/dashboard/threat-detection", icon: FileScan, label: "Threat Detection" },
   { href: "/dashboard/recommendations", icon: ShieldCheck, label: "Recommendations" },
   { href: "/dashboard/assistant", icon: Bot, label: "AI Assistant" },
+  { href: "/dashboard/awareness-hub", icon: BookUser, label: "Awareness Hub" },
 ];
 
 export function DashboardNav() {
