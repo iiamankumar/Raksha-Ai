@@ -1,6 +1,6 @@
 "use client";
 
-import { LogOut } from "lucide-react";
+import { LogOut, Settings, LifeBuoy, User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { placeholderImages } from "@/lib/placeholder-images";
 import { logout } from "@/actions/auth";
+import Link from "next/link";
 
 export function UserNav() {
   const userAvatar = placeholderImages.find(p => p.id === 'user-avatar');
@@ -39,7 +40,24 @@ export function UserNav() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          {/* Add other menu items here if needed */}
+           <Link href="/dashboard/settings">
+             <DropdownMenuItem>
+                <User className="mr-2 h-4 w-4" />
+                <span>My Account</span>
+             </DropdownMenuItem>
+          </Link>
+           <Link href="/dashboard/settings">
+             <DropdownMenuItem>
+                <Settings className="mr-2 h-4 w-4" />
+                <span>Settings</span>
+             </DropdownMenuItem>
+          </Link>
+          <Link href="/dashboard/support">
+            <DropdownMenuItem>
+              <LifeBuoy className="mr-2 h-4 w-4" />
+              <span>Support</span>
+            </DropdownMenuItem>
+          </Link>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <form action={logout}>

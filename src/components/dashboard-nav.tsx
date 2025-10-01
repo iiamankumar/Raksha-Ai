@@ -10,6 +10,7 @@ import {
   BookUser,
   LifeBuoy,
   FileText,
+  Settings,
 } from "lucide-react";
 
 import {
@@ -20,12 +21,13 @@ import {
 const navItems = [
   { href: "/dashboard", icon: Home, label: "Dashboard" },
   { href: "/dashboard/threat-detection", icon: FileScan, label: "Threat Detection" },
-  { href: "/dashboard/recommendations", icon: Sparkles, label: "AI Insights" },
+  { href: "/dashboard/ai-insights", icon: Sparkles, label: "AI Insights" },
   { href: "/dashboard/assistant", icon: Bot, label: "AI Assistant" },
   { href: "/dashboard/awareness-hub", icon: BookUser, label: "Awareness Hub" },
 ];
 
 const secondaryNavItems = [
+    { href: "/dashboard/settings", icon: Settings, label: "Settings" },
     { href: "/dashboard/support", icon: LifeBuoy, label: "Help & Support" },
     { href: "/dashboard/terms", icon: FileText, label: "Terms & Conditions" },
 ]
