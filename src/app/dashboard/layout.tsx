@@ -33,8 +33,8 @@ export default function DashboardLayout({
             <DashboardNav />
           </SidebarMenu>
         </SidebarContent>
-        <SidebarFooter className="p-4 text-xs text-sidebar-foreground/50">
-            © {new Date().getFullYear()} Raksha AI
+        <SidebarFooter className="p-2">
+            <UserNav />
         </SidebarFooter>
       </Sidebar>
       <SidebarInset>
@@ -43,7 +43,6 @@ export default function DashboardLayout({
           <div className="flex-1">
              {/* Can add breadcrumbs here */}
           </div>
-          <UserNav />
         </header>
         <main className="flex-1 p-4 sm:px-6 sm:pb-6">{children}</main>
       </SidebarInset>
