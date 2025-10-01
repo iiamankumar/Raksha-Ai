@@ -55,7 +55,7 @@ export function AssistantChat() {
   }, [messages]);
 
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col bg-card">
       <div className="flex-1 flex flex-col">
         <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>
           <div className="space-y-6">
@@ -68,7 +68,7 @@ export function AssistantChat() {
                 )}
               >
                 {message.role === "assistant" && (
-                  <Avatar className="h-8 w-8 border bg-primary text-primary-foreground">
+                  <Avatar className="h-8 w-8 border bg-sidebar-accent text-sidebar-accent-foreground">
                     <div className="flex h-full w-full items-center justify-center">
                         <Bot className="h-5 w-5"/>
                     </div>
@@ -85,7 +85,7 @@ export function AssistantChat() {
                   {message.content}
                 </div>
                 {message.role === "user" && (
-                  <Avatar className="h-8 w-8">
+                  <Avatar className="h-8 w-8 bg-sidebar-accent text-sidebar-accent-foreground">
                     <AvatarFallback>
                       <User className="h-5 w-5" />
                     </AvatarFallback>
@@ -107,15 +107,16 @@ export function AssistantChat() {
             )}
           </div>
         </ScrollArea>
-        <div className="border-t p-4">
+        <div className="border-t border-border p-4 bg-transparent">
           <form onSubmit={handleSendMessage} className="flex gap-2">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about securing your network..."
               disabled={isLoading}
+              className="bg-background focus-visible:ring-primary"
             />
-            <Button type="submit" size="icon" disabled={isLoading || !input.trim()}>
+            <Button type="submit" size="icon" disabled={isLoading || !input.trim()} className="bg-primary hover:bg-primary/90">
               <Send className="h-4 w-4" />
             </Button>
           </form>
