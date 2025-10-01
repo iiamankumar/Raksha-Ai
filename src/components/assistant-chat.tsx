@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { getRecommendationsAction } from "@/actions/ai";
+import { securityAssistantAction } from "@/actions/ai";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import Logo from "./logo";
 
 interface Message {
   role: "user" | "assistant";
@@ -37,11 +36,11 @@ export function AssistantChat() {
     setInput("");
     setIsLoading(true);
 
-    const result = await getRecommendationsAction({ userDescription: input });
+    const result = await securityAssistantAction({ query: input });
 
     setMessages([
       ...newMessages,
-      { role: "assistant", content: result.recommendations },
+      { role: "assistant", content: result.answer },
     ]);
     setIsLoading(false);
   };
