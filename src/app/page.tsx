@@ -14,7 +14,7 @@ export default function Home() {
           <span className="text-xl font-bold">Raksha AI</span>
         </div>
         <div className="flex items-center gap-4">
-          <Link href="#login" passHref>
+          <Link href="/login" passHref>
             <Button variant="ghost">Login</Button>
           </Link>
           <Link href="/register" passHref>
@@ -229,7 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="login" className="py-16 lg:hidden">
+      <section id="login" className="py-16 hidden">
          <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">
             <div className="flex justify-center items-center gap-2 mb-4">

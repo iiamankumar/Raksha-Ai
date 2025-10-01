@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useActionState } from "react";
+import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useFormStatus } from "react-dom";
 import { KeyRound, Phone } from "lucide-react";
@@ -19,7 +19,7 @@ const initialState = {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" className="w-full" disabled={pending}>
+    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" disabled={pending}>
       {pending ? "Signing In..." : "Sign In"}
     </Button>
   );
@@ -28,10 +28,11 @@ function SubmitButton() {
 export function LoginForm() {
   const router = useRouter();
   const { toast } = useToast();
-  const [state, formAction, isPending] = useActionState(login, initialState);
+  const [state, formAction] = useActionState(login, initialState);
   const [otpSent, setOtpSent] = useState(false);
 
   const handleSendOtp = () => {
+    // In a real app, you would also validate the phone number here
     setOtpSent(true);
     toast({
       title: "OTP Sent",
@@ -65,18 +66,19 @@ export function LoginForm() {
       </div>
 
       {otpSent ? (
-        <div className="grid gap-2">
-          <Label htmlFor="otp">OTP</Label>
-          <div className="relative">
-            <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input id="otp" name="otp" type="text" placeholder="123456" required className="pl-10" />
-          </div>
+        <div className="grid gap-4">
+            <div className="grid gap-2">
+                <Label htmlFor="otp">OTP</Label>
+                <div className="relative">
+                    <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input id="otp" name="otp" type="text" placeholder="123456" required className="pl-10" />
+                </div>
+            </div>
+            <SubmitButton />
         </div>
       ) : (
         <Button type="button" variant="outline" onClick={handleSendOtp}>Send OTP</Button>
       )}
-
-      {otpSent && <SubmitButton />}
 
     </form>
   );
