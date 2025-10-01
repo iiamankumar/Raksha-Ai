@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useActionState } from "react";
 import { useRouter } from "next/navigation";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { KeyRound, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ import { login } from "@/actions/auth";
 
 const initialState = {
   message: "",
+  success: false,
 };
 
 function SubmitButton() {
@@ -27,7 +28,7 @@ function SubmitButton() {
 export function LoginForm() {
   const router = useRouter();
   const { toast } = useToast();
-  const [state, formAction] = useFormState(login, initialState);
+  const [state, formAction, isPending] = useActionState(login, initialState);
   const [otpSent, setOtpSent] = useState(false);
 
   const handleSendOtp = () => {
@@ -37,21 +38,22 @@ export function LoginForm() {
       description: "A one-time password has been sent to your phone (this is a demo).",
     });
   };
+  
+  if (state.success) {
+    router.push("/dashboard");
+  } else if (state.message) {
+      if(state.message !== initialState.message) {
+        toast({
+            variant: "destructive",
+            title: "Login Failed",
+            description: state.message || "An unexpected error occurred.",
+          });
+      }
+  }
 
   return (
     <form
-      action={async (formData) => {
-        const result = await login(state, formData);
-        if (result.success) {
-          router.push("/dashboard");
-        } else {
-          toast({
-            variant: "destructive",
-            title: "Login Failed",
-            description: result.message || "An unexpected error occurred.",
-          });
-        }
-      }}
+      action={formAction}
       className="grid gap-4"
     >
       <div className="grid gap-2">
@@ -76,9 +78,6 @@ export function LoginForm() {
 
       {otpSent && <SubmitButton />}
 
-      {state?.message && (
-        <p className="text-sm text-destructive">{state.message}</p>
-      )}
     </form>
   );
 }

@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 
-export async function login(prevState: { message: string }, formData: FormData) {
+export async function login(prevState: { message: string, success: boolean }, formData: FormData) {
   const phone = formData.get("phone");
   const otp = formData.get("otp");
 
@@ -17,7 +17,7 @@ export async function login(prevState: { message: string }, formData: FormData) 
   
   // In a real app, you would verify the OTP and create a session
   
-  return { success: true };
+  redirect("/dashboard")
 }
 
 export async function logout() {
