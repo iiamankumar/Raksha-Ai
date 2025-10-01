@@ -159,9 +159,9 @@ Focus your innovation on:
 
 ## 👥 Team Members
 
-**1. Aman Kumar**
-**2. Piyush Sarkar**
-**3. Dikansha Bindal**
+1. Aman Kumar
+2. Piyush Sarkar
+3. Dikansha Bindal
 
 ## 📜 License
 
