@@ -9,19 +9,16 @@ import { RecommendationsForm } from "@/components/recommendations-form";
 
 export default function RecommendationsPage() {
   return (
-    <div className="flex justify-center items-start pt-8">
-      <Card className="w-full max-w-2xl">
+    <div className="flex flex-col gap-6">
+       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Preventive Recommendations</CardTitle>
+          <CardTitle className="text-3xl">AI Insights</CardTitle>
           <CardDescription>
-            Describe your current setup, digital habits, or security concerns to
-            receive AI-generated recommendations for mitigating future threats.
+            Analyze your security events and get personalized, AI-powered suggestions to improve your digital safety.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <RecommendationsForm />
-        </CardContent>
       </Card>
+      <RecommendationsForm />
     </div>
   );
 }

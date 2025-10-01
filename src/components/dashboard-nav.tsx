@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   FileScan,
   Bot,
-  ShieldCheck,
+  Sparkles,
   Home,
   BookUser,
   LifeBuoy,
@@ -20,7 +20,7 @@ import {
 const navItems = [
   { href: "/dashboard", icon: Home, label: "Dashboard" },
   { href: "/dashboard/threat-detection", icon: FileScan, label: "Threat Detection" },
-  { href: "/dashboard/recommendations", icon: ShieldCheck, label: "Recommendations" },
+  { href: "/dashboard/recommendations", icon: Sparkles, label: "AI Insights" },
   { href: "/dashboard/assistant", icon: Bot, label: "AI Assistant" },
   { href: "/dashboard/awareness-hub", icon: BookUser, label: "Awareness Hub" },
 ];
