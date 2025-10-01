@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useState, useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { FileScan, AlertTriangle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,7 @@ function SubmitButton() {
 }
 
 export function ThreatDetectionForm() {
-  const [state, formAction] = useFormState(analyzeTrafficAction, initialState);
+  const [state, formAction] = useActionState(analyzeTrafficAction, initialState);
 
   return (
     <form action={formAction} className="grid gap-6">
