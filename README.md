@@ -157,12 +157,6 @@ Focus your innovation on:
 
 **Building a secure digital India where every citizen, business, and institution can safely participate in the digital economy without fear of cyber threats.**
 
-## 👥 Team Members
-
-1. Aman Kumar
-2. Piyush Sarkar
-3. Dikansha Bindal
-
 ## 📜 License
 
 This project is licensed under the **MIT License** – free to use, modify, and share with attribution.
